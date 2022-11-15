@@ -16,7 +16,8 @@ def f(a):
     for i in range(n):
         for j in range(n):
             if a[i][j]==a[j][i]:
-                print('матрица симметрична')
+                pass
             else:
                 print('матрица несимметрична')
+    print('матрица симметрична')
 f(a)
