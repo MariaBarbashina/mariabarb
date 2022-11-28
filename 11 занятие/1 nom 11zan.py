@@ -2,7 +2,7 @@ from tkinter import*
 import json
 import requests
 def funct():
-    username = txt.get()
+    username = json.get()
     url = f"https://api.github.com/users/{username}"
     user_data = requests.get(url).json()
     with open("/Users/maria/Desktop/ВУЗ/основы программир/mariabarb/marbar.json", "w") as file:
