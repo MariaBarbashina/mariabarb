@@ -1,4 +1,5 @@
-package osnProg.secondKT;
+package osnProg.secondKT.one;
+
 import java.util.Arrays;
 public class Main{
     public static void main(String[] args){

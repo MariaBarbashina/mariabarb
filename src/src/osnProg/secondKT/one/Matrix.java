@@ -1,4 +1,4 @@
-package osnProg.secondKT;
+package osnProg.secondKT.one;
 
 import java.util.Random;
 import java.util.Arrays;
