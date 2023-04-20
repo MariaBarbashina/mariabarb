@@ -10,4 +10,5 @@ public class Square1 {
     Square1 triangle = new Square1();
     double area = triangle.calculateArea(3, 4, 5);
 
+
 }
