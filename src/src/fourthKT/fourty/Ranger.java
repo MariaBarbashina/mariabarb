@@ -4,29 +4,29 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Ranger {
-    public static String formatRange(int[] nums) {
+    public static String formatRanger(int[] numb) {
         List<String> ranges = new ArrayList<>();
-        int start = nums[0];
-        int end = start;
+        int starter = numb[0];
+        int end = starter;
 
-        for (int i = 1; i < nums.length; i++) {
-            if (nums[i] == end + 1) {
+        for (int j = 1; j < numb.length; j++) {
+            if (numb[j] == end + 1) {
                 end++;
             } else {
-                ranges.add(format(start, end));
-                start = end = nums[i];
+                ranges.add(formater(starter, end));
+                starter = end = numb[j];
             }
         }
-        ranges.add(format(start, end));
+        ranges.add(formater(starter, end));
 
         return String.join(",", ranges);
     }
 
-    private static String format(int start, int end) {
-        if (start == end) {
-            return Integer.toString(start);
+    private static String formater(int starter, int end) {
+        if (starter == end) {
+            return Integer.toString(starter);
         } else {
-            return start + "-" + end;
+            return starter + "-" + end;
         }
     }
 }

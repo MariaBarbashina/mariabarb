@@ -1,37 +1,36 @@
 package fourthKT.fourtynine;
 
 public class Calc {
-    public static int fusc(int n) {
-        int a = 0;
-        int b = 1;
+    public static int f(int num) {
+        int x = 0;
+        int y = 1;
 
-        if (n == 0) {
-            return a; // Возвращаем a, так как fusc(0) = 0 (уравнение 1)
+        if (num == 0) {
+            return x;
         }
 
-        if (n == 1 || n == 2) {
-            return b; // Возвращаем b, так как fusc(1) = 1 и fusc(2) = 1 (уравнение 2)
+        if (num == 1 || num == 2) {
+            return y;
         }
 
-        while (n > 2) {
-            if (n % 2 == 0) {
-                n = n / 2; // Уменьшаем n в два раза, так как n четное (уравнение 3)
+        while (num > 2) {
+            if (num % 2 == 0) {
+                num = num / 2;
             } else {
-                n = n - 1; // Уменьшаем n на единицу, так как n нечетное (уравнение 4)
-                int temp = a; // Временная переменная для обмена значениями a и b
-                a = a + b; // Обновляем a суммой a и b (уравнение 4)
-                b = temp; // Присваиваем b предыдущее значение a
+                num = num - 1;
+                int temp = x;
+                x = x + y;
+                y = temp;
             }
         }
 
-        return a + b; // Возвращаем сумму a и b, содержащую вычисленное n-е число Фуска
+        return x + y;
     }
 
     public static void main(String[] args) {
-        // Примеры использования
-        System.out.println(fusc(0)); // Ожидаемый вывод: 0
-        System.out.println(fusc(1)); // Ожидаемый вывод: 1
-        System.out.println(fusc(2)); // Ожидаемый вывод: 1
-        System.out.println(fusc(3)); // Ожидаемый вывод: 1
+        System.out.println(f(0));
+        System.out.println(f(1));
+        System.out.println(f(2));
+        System.out.println(f(3));
     }
 }

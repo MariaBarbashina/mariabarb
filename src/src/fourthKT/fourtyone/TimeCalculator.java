@@ -1,12 +1,12 @@
 package fourthKT.fourtyone;
 
 public class TimeCalculator {
-    private static final int YEAR = 365 * 24 * 60 * 60;
-    private static final int MONTH = 30 * 24 * 60 * 60;
-    private static final int WEEK = 7 * 24 * 60 * 60;
-    private static final int DAY = 24 * 60 * 60;
-    private static final int HOUR = 60 * 60;
-    private static final int MINUTE = 60;
+    private static final int GOD = 365 * 24 * 60 * 60;
+    private static final int MES = 30 * 24 * 60 * 60;
+    private static final int NED = 7 * 24 * 60 * 60;
+    private static final int DEN = 24 * 60 * 60;
+    private static final int CHAS = 60 * 60;
+    private static final int MINUT = 60;
 
     public static String calculateTime(int seconds) {
         if (seconds < 0) {
@@ -17,64 +17,64 @@ public class TimeCalculator {
             return "0 секунд";
         }
 
-        int years = seconds / YEAR;
-        seconds -= years * YEAR;
-        int months = seconds / MONTH;
-        seconds -= months * MONTH;
-        int weeks = seconds / WEEK;
-        seconds -= weeks * WEEK;
-        int days = seconds / DAY;
-        seconds -= days * DAY;
-        int hours = seconds / HOUR;
-        seconds -= hours * HOUR;
-        int minutes = seconds / MINUTE;
-        seconds -= minutes * MINUTE;
+        int god = seconds / GOD;
+        seconds -= god * GOD;
+        int mes = seconds / MES;
+        seconds -= mes * MES;
+        int ned = seconds / NED;
+        seconds -= ned * NED;
+        int den = seconds / DEN;
+        seconds -= den * DEN;
+        int chas = seconds / CHAS;
+        seconds -= chas * CHAS;
+        int minut = seconds / MINUT;
+        seconds -= minut * MINUT;
 
         StringBuilder sb = new StringBuilder();
-        if (years > 0) {
-            sb.append(years).append(" ").append(formatWord(years, "год", "года", "лет"));
+        if (god > 0) {
+            sb.append(god).append(" ").append(formater(god, "год", "года", "лет"));
         }
-        if (months > 0) {
-            appendDelimiter(sb);
-            sb.append(months).append(" ").append(formatWord(months, "месяц", "месяца", "месяцев"));
+        if (mes > 0) {
+            appender(sb);
+            sb.append(mes).append(" ").append(formater(mes, "месяц", "месяца", "месяцев"));
         }
-        if (weeks > 0) {
-            appendDelimiter(sb);
-            sb.append(weeks).append(" ").append(formatWord(weeks, "неделя", "недели", "недель"));
+        if (ned > 0) {
+            appender(sb);
+            sb.append(ned).append(" ").append(formater(ned, "неделя", "недели", "недель"));
         }
-        if (days > 0) {
-            appendDelimiter(sb);
-            sb.append(days).append(" ").append(formatWord(days, "день", "дня", "дней"));
+        if (den > 0) {
+            appender(sb);
+            sb.append(den).append(" ").append(formater(den, "день", "дня", "дней"));
         }
-        if (hours > 0) {
-            appendDelimiter(sb);
-            sb.append(hours).append(" ").append(formatWord(hours, "час", "часа", "часов"));
+        if (chas > 0) {
+            appender(sb);
+            sb.append(chas).append(" ").append(formater(chas, "час", "часа", "часов"));
         }
-        if (minutes > 0) {
-            appendDelimiter(sb);
-            sb.append(minutes).append(" ").append(formatWord(minutes, "минута", "минуты", "минут"));
+        if (minut > 0) {
+            appender(sb);
+            sb.append(minut).append(" ").append(formater(minut, "минута", "минуты", "минут"));
         }
         if (seconds > 0) {
-            appendDelimiter(sb);
-            sb.append(seconds).append(" ").append(formatWord(seconds, "секунда", "секунды", "секунд"));
+            appender(sb);
+            sb.append(seconds).append(" ").append(formater(seconds, "секунда", "секунды", "секунд"));
         }
 
         return sb.toString();
     }
 
-    private static void appendDelimiter(StringBuilder sb) {
+    private static void appender(StringBuilder sb) {
         if (sb.length() > 0) {
             sb.append(", ");
         }
     }
 
-    private static String formatWord(int number, String form1, String form2, String form5) {
-        if (number % 10 == 1 && number % 100 != 11) {
-            return form1;
-        } else if (number % 10 >= 2 && number % 10 <= 4 && (number % 100 < 10 || number % 100 >= 20)) {
-            return form2;
+    private static String formater(int numb, String f1, String f2, String f5) {
+        if (numb % 10 == 1 && numb % 100 != 11) {
+            return f1;
+        } else if (numb % 10 >= 2 && numb % 10 <= 4 && (numb % 100 < 10 || numb % 100 >= 20)) {
+            return f2;
         } else {
-            return form5;
+            return f5;
         }
     }
 }

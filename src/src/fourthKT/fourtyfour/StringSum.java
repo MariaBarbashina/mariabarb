@@ -1,13 +1,13 @@
 package fourthKT.fourtyfour;
 
 public class StringSum {
-    public static String sum(String num1, String num2) {
+    public static String summ(String numb_one, String numb_two) {
 
-        int n1 = Integer.parseInt(num1);
-        int n2 = Integer.parseInt(num2);
+        int m1 = Integer.parseInt(numb_one);
+        int m2 = Integer.parseInt(numb_two);
 
-        int sum = n1 + n2;
+        int summ = m1 + m2;
 
-        return String.valueOf(sum);
+        return String.valueOf(summ);
     }
 }

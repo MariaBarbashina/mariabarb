@@ -3,7 +3,7 @@ package fourthKT.fourtysix;
 import java.util.HashMap;
 
 public class ToArabic {
-    public static int convert(String roman) {
+    public static int converter(String roma) {
         HashMap<Character, Integer> map = new HashMap<>();
         map.put('I', 1);
         map.put('V', 5);
@@ -13,15 +13,15 @@ public class ToArabic {
         map.put('D', 500);
         map.put('M', 1000);
 
-        int result = 0;
-        for (int i = 0; i < roman.length(); i++) {
-            int value = map.get(roman.charAt(i));
-            if (i + 1 < roman.length() && map.get(roman.charAt(i + 1)) > value) {
-                result -= value;
+        int resultik = 0;
+        for (int i = 0; i < roma.length(); i++) {
+            int data = map.get(roma.charAt(i));
+            if (i + 1 < roma.length() && map.get(roma.charAt(i + 1)) > data) {
+                resultik -= data;
             } else {
-                result += value;
+                resultik += data;
             }
         }
-        return result;
+        return resultik;
     }
 }

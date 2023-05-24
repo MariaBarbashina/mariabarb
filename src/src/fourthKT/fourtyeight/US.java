@@ -4,23 +4,23 @@ import java.util.HashSet;
 
 public class US {
     public static void main(String[] args) {
-        int n = 30; // Количество чисел в ряду u
-        HashSet<Integer> u = new HashSet<>();
+        int nom = 30;
+        HashSet<Integer> v = new HashSet<>();
 
-        int x = 0;
-        int y, z;
+        int a = 0;
+        int b, c;
 
-        while (u.size() < n) {
-            y = 2 * x + 1;
-            z = 3 * x + 1;
-            u.add(x);
-            u.add(y);
-            u.add(z);
-            x++;
+        while (v.size() < nom) {
+            b = 2 * a + 1;
+            c = 3 * a + 1;
+            v.add(a);
+            v.add(b);
+            v.add(c);
+            a++;
         }
 
-        System.out.println("Ряд чисел u без дубликатов:");
-        for (int num : u) {
+        System.out.println("Ряд чисел v без дубликатов:");
+        for (int num : v) {
             System.out.print(num + " ");
         }
     }

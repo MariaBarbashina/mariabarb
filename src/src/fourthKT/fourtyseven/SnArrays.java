@@ -7,36 +7,32 @@ public class SnArrays {
     public static List<Integer> snail(int[][] array) {
         List<Integer> result = new ArrayList<>();
         int n = array.length;
-        int rowBegin = 0, rowEnd = n - 1;
-        int colBegin = 0, colEnd = n - 1;
+        int rowNach = 0, rowKon = n - 1;
+        int colNach = 0, colKon = n - 1;
 
-        while (rowBegin <= rowEnd && colBegin <= colEnd) {
-            // Слева направо
-            for (int i = colBegin; i <= colEnd; i++) {
-                result.add(array[rowBegin][i]);
+        while (rowNach <= rowKon && colNach <= colKon) {
+            for (int i = colNach; i <= colKon; i++) {
+                result.add(array[rowNach][i]);
             }
-            rowBegin++;
+            rowNach++;
 
-            // Сверху вниз
-            for (int i = rowBegin; i <= rowEnd; i++) {
-                result.add(array[i][colEnd]);
+            for (int i = rowNach; i <= rowKon; i++) {
+                result.add(array[i][colKon]);
             }
-            colEnd--;
+            colKon--;
 
-            // Справа налево
-            if (rowBegin <= rowEnd) {
-                for (int i = colEnd; i >= colBegin; i--) {
-                    result.add(array[rowEnd][i]);
+            if (rowNach <= rowKon) {
+                for (int i = colKon; i >= colNach; i--) {
+                    result.add(array[rowKon][i]);
                 }
-                rowEnd--;
+                rowKon--;
             }
 
-            // Снизу вверх
-            if (colBegin <= colEnd) {
-                for (int i = rowEnd; i >= rowBegin; i--) {
-                    result.add(array[i][colBegin]);
+            if (colNach <= colKon) {
+                for (int i = rowKon; i >= rowNach; i--) {
+                    result.add(array[i][colNach]);
                 }
-                colBegin++;
+                colNach++;
             }
         }
 
@@ -46,6 +42,6 @@ public class SnArrays {
     public static void main(String[] args) {
         int[][] array = {{5, 2, 8}, {4, 6, 3}, {1, 9, 0}};
         List<Integer> sorted = snail(array);
-        System.out.println(sorted);  // Вывод: [5, 2, 8, 3, 0, 9, 1, 4, 6]
+        System.out.println(sorted);
     }
 }

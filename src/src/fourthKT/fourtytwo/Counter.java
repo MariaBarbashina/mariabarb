@@ -1,13 +1,13 @@
 package fourthKT.fourtytwo;
 
 public class Counter {
-    public static int countIntervals(int[][] intervals) {
-        int count = 0;
+    public static int counter(int[][] intervals) {
+        int c = 0;
         for (int i = 0; i < intervals.length - 1; i++) {
-            int end = intervals[i][1];
-            int startNext = intervals[i + 1][0];
-            count += startNext - end - 1;
+            int ender = intervals[i][1];
+            int started = intervals[i + 1][0];
+            c += started - ender - 1;
         }
-        return count;
+        return c;
     }
 }

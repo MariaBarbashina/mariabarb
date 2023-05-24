@@ -4,24 +4,24 @@ import java.util.Arrays;
 
 public class NP {
     public int getNP(int num) {
-        int[] digits = Integer.toString(num).chars().map(c -> c - '0').toArray();
-        int i = digits.length - 2;
-        while (i >= 0 && digits[i] >= digits[i + 1]) {
+        int[] digital = Integer.toString(num).chars().map(c -> c - '0').toArray();
+        int i = digital.length - 2;
+        while (i >= 0 && digital[i] >= digital[i + 1]) {
             i--;
         }
         if (i < 0) {
             return -1;
         }
-        int j = digits.length - 1;
-        while (digits[j] <= digits[i]) {
+        int j = digital.length - 1;
+        while (digital[j] <= digital[i]) {
             j--;
         }
-        int temp = digits[i];
-        digits[i] = digits[j];
-        digits[j] = temp;
-        Arrays.sort(digits, i + 1, digits.length);
-        int nextPermutation = Integer.parseInt(Arrays.toString(digits)
+        int t = digital[i];
+        digital[i] = digital[j];
+        digital[j] = t;
+        Arrays.sort(digital, i + 1, digital.length);
+        int nP = Integer.parseInt(Arrays.toString(digital)
                 .replaceAll("[\\[\\]\\,\\s]", ""));
-        return (nextPermutation > num) ? nextPermutation : -1;
+        return (nP > num) ? nP : -1;
     }
 }
